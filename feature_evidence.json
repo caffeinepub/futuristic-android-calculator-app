@@ -1,0 +1,85 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-implement-a-mobile-friendly-calculator-ui-with-a-numeric-keypad-and-operator-keys-supporting-at-minimum-addition-subtraction-multiplication-division-decimal-input-clear-ac-delete-backspace-and-equals",
+      "featureTitle": "Implement a mobile-friendly calculator UI with a numeric keypad and operator keys, supporting at minimum: addition, subtraction, multiplication, division, decimal input, clear (AC), delete/backspace, and equals.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/calculator/CalculatorDisplay.tsx",
+        "frontend/src/components/calculator/CalculatorKeypad.tsx",
+        "frontend/src/pages/CalculatorPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-calculator-interaction-behavior-input-chaining-operator-precedence-rules-or-clearly-defined-immediate-execution-behavior-and-consistent-handling-of-repeated-equals-sign-changes-optional-and-clearing-states",
+      "featureTitle": "Add calculator interaction behavior: input chaining, operator precedence rules (or clearly defined immediate-execution behavior), and consistent handling of repeated equals, sign changes (optional), and clearing states.",
+      "files": [
+        "frontend/src/components/calculator/CalculatorKeypad.tsx",
+        "frontend/src/hooks/useCalculatorEngine.ts",
+        "frontend/src/pages/CalculatorPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-responsive-layout-and-accessibility-support-one-handed-use-on-mobile-keyboard-input-on-desktop-and-accessible-labels-for-assistive-technologies",
+      "featureTitle": "Ensure responsive layout and accessibility: support one-handed use on mobile, keyboard input on desktop, and accessible labels for assistive technologies.",
+      "files": [
+        "frontend/src/components/calculator/CalculatorKeypad.tsx",
+        "frontend/src/index.css",
+        "frontend/src/pages/CalculatorPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-coherent-distinct-visual-theme-colors-typography-spacing-and-component-styling-consistently-across-the-calculator-screens-and-states-avoiding-blue-purple-as-primary-colors",
+      "featureTitle": "Apply a coherent, distinct visual theme (colors, typography, spacing, and component styling) consistently across the calculator screens and states, avoiding blue/purple as primary colors.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/src/pages/CalculatorPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

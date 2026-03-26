@@ -1,0 +1,94 @@
+{
+  "kind": "build_request",
+  "title": "Mobile-friendly calculator app",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Implement a mobile-friendly calculator UI with a numeric keypad and operator keys, supporting at minimum: addition, subtraction, multiplication, division, decimal input, clear (AC), delete/backspace, and equals.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a mobile friendly calculator alp"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The calculator renders a display area and buttons for digits 0–9, decimal point, +, −, ×, ÷, =, AC, and backspace.",
+        "On mobile-sized viewports, buttons are large enough for touch and laid out in a clear grid without horizontal scrolling.",
+        "Basic calculations produce correct results (e.g., 7×8=56, 9÷3=3, 1.5+2.25=3.75).",
+        "Division by zero is handled gracefully (e.g., show an error state/message in the display and allow continuing after clearing)."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Add calculator interaction behavior: input chaining, operator precedence rules (or clearly defined immediate-execution behavior), and consistent handling of repeated equals, sign changes (optional), and clearing states.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a mobile friendly calculator alp"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The chosen evaluation behavior is consistent and testable (documented in-code and reflected in UI behavior).",
+        "Users can enter multi-step expressions using the provided behavior without the UI getting stuck (e.g., 2 + 3 × 4).",
+        "AC resets all state; backspace removes the last entered digit/decimal in the current input.",
+        "After an error (e.g., divide by zero), AC returns to a normal state."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Ensure responsive layout and accessibility: support one-handed use on mobile, keyboard input on desktop, and accessible labels for assistive technologies.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a mobile friendly calculator alp"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Layout adapts from mobile to desktop (buttons and display remain readable and usable).",
+        "Buttons have accessible names/labels and visible focus states for keyboard navigation.",
+        "Desktop keyboard input works for digits, operators (+-*/.), Enter/= for equals, Backspace for delete, and Escape for clear (where feasible)."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Apply a coherent, distinct visual theme (colors, typography, spacing, and component styling) consistently across the calculator screens and states, avoiding blue/purple as primary colors.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a mobile friendly calculator alp"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The UI has a consistent theme across normal, active, focus, and error states.",
+        "Primary colors are not blue/purple unless used only as minor accents.",
+        "The theme remains readable with sufficient contrast between display text and background."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files under frontend/src/components/ui or other immutable paths listed in SYSTEM_CONTEXT; compose those components instead if needed.",
+    "Backend must remain a single Motoko actor; only add backend features if required for the calculator (not expected)."
+  ],
+  "nonGoals": [
+    "User accounts or Internet Identity authentication.",
+    "Storing calculation history across sessions/devices.",
+    "Scientific calculator functions (trig, logs, parentheses) unless added later."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

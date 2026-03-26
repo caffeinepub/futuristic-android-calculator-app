@@ -1,0 +1,50 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-11T02:57:41.837Z",
+  "summary": "Diff adds a complete calculator page with display + keypad UI, a calculator engine hook documenting immediate-execution behavior (with chaining/repeated equals/error handling), responsive Tailwind styling, and desktop keyboard support with ARIA labels and focus-visible rings. However, it also introduces Internet Identity/auth-related hooks/providers and react-query actor plumbing plus a promotional footer, which are outside the BuildRequest non-goals.",
+  "missing_requirements": [],
+  "hallucinated_features": [
+    {
+      "description": "Internet Identity authentication/provider and identity state management (explicitly a non-goal: no Internet Identity authentication).",
+      "reason": "BuildRequest non-goals forbid adding Internet Identity authentication; diff adds an InternetIdentityProvider and related hook usage.",
+      "evidence": [
+        "frontend/src/main.tsx",
+        "frontend/src/hooks/useInternetIdentity.ts"
+      ]
+    },
+    {
+      "description": "Authenticated/anonymous backend actor creation and react-query invalidation plumbing (actor hook) unrelated to a purely client-side calculator.",
+      "reason": "BuildRequest says backend features only if required for the calculator (not expected); diff adds actor/query infrastructure tied to identity.",
+      "evidence": [
+        "frontend/src/hooks/useActor.ts"
+      ]
+    },
+    {
+      "description": "Promotional footer/attribution link to caffeine.ai with appIdentifier tracking.",
+      "reason": "Not requested by any requirement; adds additional UI and external link behavior.",
+      "evidence": [
+        "frontend/src/pages/CalculatorPage.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.64,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/calculator/CalculatorDisplay.tsx",
+    "frontend/src/components/calculator/CalculatorKeypad.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useCalculatorEngine.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/CalculatorPage.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

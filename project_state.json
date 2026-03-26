@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build a mobile-friendly calculator app.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-implement-a-mobile-friendly-calculator-ui-with-a-numeric-keypad-and-operator-keys-supporting-at-minimum-addition-subtraction-multiplication-division-decimal-input-clear-ac-delete-backspace-and-equals",
+      "title": "Implement a mobile-friendly calculator UI with a numeric keypad and operator keys, supporting at minimum: addition, subtraction, multiplication, division, decimal input, clear (AC), delete/backspace, and equals.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-calculator-interaction-behavior-input-chaining-operator-precedence-rules-or-clearly-defined-immediate-execution-behavior-and-consistent-handling-of-repeated-equals-sign-changes-optional-and-clearing-states",
+      "title": "Add calculator interaction behavior: input chaining, operator precedence rules (or clearly defined immediate-execution behavior), and consistent handling of repeated equals, sign changes (optional), and clearing states.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-responsive-layout-and-accessibility-support-one-handed-use-on-mobile-keyboard-input-on-desktop-and-accessible-labels-for-assistive-technologies",
+      "title": "Ensure responsive layout and accessibility: support one-handed use on mobile, keyboard input on desktop, and accessible labels for assistive technologies.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-distinct-visual-theme-colors-typography-spacing-and-component-styling-consistently-across-the-calculator-screens-and-states-avoiding-blue-purple-as-primary-colors",
+      "title": "Apply a coherent, distinct visual theme (colors, typography, spacing, and component styling) consistently across the calculator screens and states, avoiding blue/purple as primary colors.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a mobile-friendly calculator app.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Mobile-friendly calculator app",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

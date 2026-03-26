@@ -1,0 +1,18 @@
+{
+  "backend/main.mo": "Empty Motoko actor with no methods.",
+  "feature_evidence.json": "Feature evidence report listing calculator UI, behavior, accessibility, and theme features with associated files and components.",
+  "frontend-file-summaries.txt": "Text file containing one-line summaries for various frontend source files.",
+  "frontend/index.css": "Tailwind base layer defining theme color variables, dark mode overrides, and global styling.",
+  "frontend/index.html": "Basic HTML entry point mounting the React app and loading main.tsx.",
+  "frontend/src/App.tsx": "Root React component that renders the CalculatorPage.",
+  "frontend/src/components/calculator/CalculatorDisplay.tsx": "Display component showing the calculator value with error styling and ARIA attributes.",
+  "frontend/src/components/calculator/CalculatorKeypad.tsx": "Calculator keypad component defining button layout, handlers, styling, and accessibility labels.",
+  "frontend/src/hooks/useActor.ts": "React hook that creates and manages an authenticated or anonymous backend actor with query caching.",
+  "frontend/src/hooks/useCalculatorEngine.ts": "State machine implementing immediate-execution calculator logic, including chaining, repeated equals, and error handling.",
+  "frontend/src/hooks/useInternetIdentity.ts": "React context and hooks for managing Internet Identity authentication, login, logout, and identity persistence.",
+  "frontend/src/index.css": "Defines Tailwind layers and custom OKLCH theme variables for light/dark modes and applies global base styles.",
+  "frontend/src/main.tsx": "Bootstraps the React app with React Query and InternetIdentityProvider and mounts App with global styles.",
+  "frontend/src/pages/CalculatorPage.tsx": "Renders the calculator layout, wires keypad/display to calculator engine hooks, and adds full keyboard support.",
+  "frontend/tailwind.config.js": "Configures Tailwind with custom color variables, typography, animations, and plugins for the app theme.",
+  "project_state.json": "Contains the project's state, feature list, and metadata for the mobile-friendly calculator app."
+}

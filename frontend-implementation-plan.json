@@ -1,0 +1,113 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Mobile-friendly calculator app (frontend)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Build a touch-friendly calculator UI with display and keypad supporting digits, decimals, basic operators, AC, backspace, and equals, including graceful divide-by-zero handling.",
+      "acceptanceCriteria": [
+        "The calculator renders a display area and buttons for digits 0–9, decimal point, +, −, ×, ÷, =, AC, and backspace.",
+        "On mobile-sized viewports, buttons are large enough for touch and laid out in a clear grid without horizontal scrolling.",
+        "Basic calculations produce correct results (e.g., 7×8=56, 9÷3=3, 1.5+2.25=3.75).",
+        "Division by zero is handled gracefully (e.g., show an error state/message in the display and allow continuing after clearing)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the app shell that renders the calculator screen as the primary (and only) view, ensuring it mounts under the existing React entry point."
+        },
+        {
+          "path": "frontend/src/pages/CalculatorPage.tsx",
+          "operation": "create",
+          "description": "Implement the calculator screen layout: display area + keypad grid (digits, decimal, operators, AC, backspace, equals) with mobile-first sizing and a clear grid layout. Use shadcn-ui components (e.g., Button/Card if present) for consistent UI primitives; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/calculator/CalculatorDisplay.tsx",
+          "operation": "create",
+          "description": "Create a dedicated display component that shows the current entry/result and error messages (e.g., divide-by-zero) with appropriate typography and truncation/overflow behavior."
+        },
+        {
+          "path": "frontend/src/components/calculator/CalculatorKeypad.tsx",
+          "operation": "create",
+          "description": "Create a keypad component that renders the required keys in a consistent grid and emits semantic actions (digit, decimal, operator, equals, clear, backspace). Use shadcn-ui Button where appropriate; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement consistent calculator interaction logic: chaining, a clearly defined evaluation model, repeated equals behavior, and correct clear/backspace state handling.",
+      "acceptanceCriteria": [
+        "The chosen evaluation behavior is consistent and testable (documented in-code and reflected in UI behavior).",
+        "Users can enter multi-step expressions using the provided behavior without the UI getting stuck (e.g., 2 + 3 × 4).",
+        "AC resets all state; backspace removes the last entered digit/decimal in the current input.",
+        "After an error (e.g., divide by zero), AC returns to a normal state."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useCalculatorEngine.ts",
+          "operation": "create",
+          "description": "Implement the calculator state machine and action handlers (digit/decimal, operator, equals, AC, backspace). Include in-code documentation of the chosen evaluation behavior (e.g., immediate-execution or precedence) and implement repeated-equals semantics and divide-by-zero error state."
+        },
+        {
+          "path": "frontend/src/pages/CalculatorPage.tsx",
+          "operation": "modify",
+          "description": "Wire the keypad actions to the calculator engine hook, render the engine's display value/error state, and ensure AC/backspace/equals behavior matches the documented model."
+        },
+        {
+          "path": "frontend/src/components/calculator/CalculatorKeypad.tsx",
+          "operation": "modify",
+          "description": "Ensure each key dispatches the correct semantic action (including distinguishing AC vs backspace and operator keys), and prevent invalid inputs where needed (e.g., multiple decimals in the current entry)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add responsive + accessible interactions: one-handed mobile layout, keyboard support on desktop, and accessible labels/focus states for assistive tech.",
+      "acceptanceCriteria": [
+        "Layout adapts from mobile to desktop (buttons and display remain readable and usable).",
+        "Buttons have accessible names/labels and visible focus states for keyboard navigation.",
+        "Desktop keyboard input works for digits, operators (+-*/.), Enter/= for equals, Backspace for delete, and Escape for clear (where feasible)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/CalculatorPage.tsx",
+          "operation": "modify",
+          "description": "Implement responsive layout constraints (e.g., max width on large screens, bottom-aligned on mobile for one-handed use) and add keyboard event handling that maps keys to calculator actions (digits, operators, ., Enter/=, Backspace, Escape)."
+        },
+        {
+          "path": "frontend/src/components/calculator/CalculatorKeypad.tsx",
+          "operation": "modify",
+          "description": "Add accessibility attributes: explicit accessible names (aria-label) for operator keys, AC, backspace, equals; ensure focus order is logical and focus styles are visible. Use shadcn-ui Button focus styling where available; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Define baseline global styles to ensure visible focus outlines/rings and consistent typography defaults; keep it compatible with Tailwind and the existing shadcn-ui CSS-variable approach."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Apply a cohesive visual theme across normal/active/focus/error states with non-blue/purple primary colors and sufficient contrast.",
+      "acceptanceCriteria": [
+        "The UI has a consistent theme across normal, active, focus, and error states.",
+        "Primary colors are not blue/purple unless used only as minor accents.",
+        "The theme remains readable with sufficient contrast between display text and background."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Set/adjust CSS variables used by Tailwind/shadcn-ui theming (e.g., --background, --foreground, --primary, --destructive, --ring) to a cohesive palette using non-blue/purple primaries (e.g., warm amber/orange as primary, neutral background) and ensure readable contrast across states."
+        },
+        {
+          "path": "frontend/src/pages/CalculatorPage.tsx",
+          "operation": "modify",
+          "description": "Apply consistent themed styling to the calculator surface, display, and keys (operator/equals/AC/error variants) using Tailwind utilities and (optionally) shadcn-ui primitives; verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

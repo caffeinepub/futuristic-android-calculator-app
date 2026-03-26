@@ -1,0 +1,9 @@
+{
+  "frontend/src/index.css": "Global styles with warm amber/orange color palette using OKLCH, custom font stack, and visible focus states for accessibility.",
+  "frontend/tailwind.config.js": "Tailwind configuration with Inter font family, extended border radius values, and custom soft shadow utilities.",
+  "frontend/src/App.tsx": "Root application component that renders the CalculatorPage as the main view.",
+  "frontend/src/hooks/useCalculatorEngine.ts": "Calculator state machine implementing immediate-execution evaluation model with support for chaining operations, repeated equals, error handling, and all calculator actions.",
+  "frontend/src/components/calculator/CalculatorDisplay.tsx": "Display component showing the current calculation value or error state with large monospace typography and appropriate ARIA attributes.",
+  "frontend/src/components/calculator/CalculatorKeypad.tsx": "Grid-based keypad component with digit buttons (0-9), decimal point, operators (+, −, ×, ÷), equals, AC, and backspace, styled with distinct visual hierarchy.",
+  "frontend/src/pages/CalculatorPage.tsx": "Main calculator page with responsive layout, keyboard event handling for desktop use, header, footer with attribution, and calculator components."
+}
